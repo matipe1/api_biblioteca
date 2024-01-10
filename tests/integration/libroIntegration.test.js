@@ -29,7 +29,8 @@ describe("Libro API", () => {
         expect(response.status).toBe(200);
         expect(response.body).toEqual(mockLibros);
         expect(libroModel.find).toHaveBeenCalledTimes(1);
-    });
+        });
+
 
     test("POST /libros debería crear un nuevo libro", async () => {
         const libroCreado = { id: "1", titulo: "Nuevo Libro", autor: "Juan Perez" };
@@ -46,5 +47,5 @@ describe("Libro API", () => {
         expect(response.body).toEqual(libroCreado);
         expect(libroModel.create).toHaveBeenCalledTimes(1);
         expect(libroModel.create).toHaveBeenCalledWith(libroCreado);
-    });
+        });
 });
